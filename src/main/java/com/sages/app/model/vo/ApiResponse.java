@@ -1,4 +1,4 @@
-package com.sages.app.entity.vo;
+package com.sages.app.model.vo;
 
 
 import com.sages.app.constant.enums.Status;
