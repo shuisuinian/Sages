@@ -1,14 +1,15 @@
 package com.sages.app.exception;
 
 
-import com.sages.app.constant.Status;
+import com.sages.app.constant.enums.Status;
 import lombok.Getter;
-
 /**
  * <p>
  * JSON异常
- * </p>
+ * @author wanyifan
+ * @date 2019/12/19 14:51
  */
+
 @Getter
 public class JsonException extends BaseException {
 

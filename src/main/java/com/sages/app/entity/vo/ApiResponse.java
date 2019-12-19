@@ -1,14 +1,15 @@
 package com.sages.app.entity.vo;
 
 
-import com.sages.app.constant.Status;
+import com.sages.app.constant.enums.Status;
 import com.sages.app.exception.BaseException;
 import lombok.Data;
-
 /**
  * <p>
- * 通用的 API 接口封装
+ *  通用的 API 接口封装
  * </p>
+ * @author wanyifan
+ * @date 2019/12/19 14:51
  */
 @Data
 public class ApiResponse {

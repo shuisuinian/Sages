@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * @author wanyifan
+ * @date 2019/12/19 14:51
+ */
 @RestController
 public class UserController {
 

@@ -1,11 +1,10 @@
-package com.sages.app.constant;
+package com.sages.app.constant.enums;
 
 import lombok.Getter;
 
 /**
- * <p>
- * 状态码封装
- * </p>
+ * @author wanyifan
+ * @date 2019/12/19 14:51
  */
 @Getter
 public enum Status {

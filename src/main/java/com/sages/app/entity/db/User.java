@@ -6,6 +6,10 @@ import tk.mybatis.mapper.annotation.KeySql;
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * @author wanyifan
+ * @date 2019/12/19 14:51
+ */
 @Data
 @Table(name = "wx_user")
 public class User {
