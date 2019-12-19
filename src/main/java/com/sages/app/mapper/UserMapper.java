@@ -1,7 +1,6 @@
 package com.sages.app.mapper;
 
-import com.sages.app.entity.db.User;
-import org.springframework.stereotype.Component;
+import com.sages.app.model.vo.User;
 import tk.mybatis.mapper.common.Mapper;
 /**
  * @author wanyifan

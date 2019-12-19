@@ -1,7 +1,7 @@
 package com.sages.app.exception;
 
 
-import com.sages.app.constant.enums.Status;
+import com.sages.app.model.enums.Status;
 import lombok.Getter;
 /**
  * <p>

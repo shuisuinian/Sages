@@ -1,4 +1,4 @@
-package com.sages.app.entity.db;
+package com.sages.app.model.vo;
 
 import lombok.Data;
 import tk.mybatis.mapper.annotation.KeySql;

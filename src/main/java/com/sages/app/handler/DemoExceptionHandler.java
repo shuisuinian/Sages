@@ -1,6 +1,6 @@
 package com.sages.app.handler;
 
-import com.sages.app.entity.vo.ApiResponse;
+import com.sages.app.model.vo.ApiResponse;
 import com.sages.app.exception.JsonException;
 import com.sages.app.exception.PageException;
 import lombok.extern.slf4j.Slf4j;
