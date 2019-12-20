@@ -18,8 +18,12 @@ import java.util.List;
 @RequestMapping("/user")
 public class WxUserController {
 
-    @Autowired
-    private WxUserService wxUserService;
+    private final WxUserService wxUserService;
+
+    public WxUserController(WxUserService wxUserService) {
+        this.wxUserService = wxUserService;
+    }
+
     @GetMapping("/getAllUser")
     public ResponseEntity<List<WxUser>> getAllUser(){
         List<WxUser> wxUsers = wxUserService.listWxUsers();
