@@ -7,11 +7,11 @@ import java.io.Serializable;
  * (BookType)实体类
  *
  * @author wanyifan
- * @since 2019-12-19 21:09:18
+ * @since 2019-12-20 09:07:01
  */
 @Data
 public class BookType implements Serializable {
-    private static final long serialVersionUID = 870147338650240521L;
+    private static final long serialVersionUID = -48518907576797821L;
     /**
     * 类型id
     */

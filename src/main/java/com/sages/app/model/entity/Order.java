@@ -7,11 +7,11 @@ import java.io.Serializable;
  * (Order)实体类
  *
  * @author wanyifan
- * @since 2019-12-19 21:09:18
+ * @since 2019-12-20 09:07:01
  */
 @Data
 public class Order implements Serializable {
-    private static final long serialVersionUID = 797246664228809587L;
+    private static final long serialVersionUID = -55884411352111153L;
     /**
     * 订单id
     */

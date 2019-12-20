@@ -7,11 +7,11 @@ import java.io.Serializable;
  * (ShopCar)实体类
  *
  * @author wanyifan
- * @since 2019-12-19 21:09:18
+ * @since 2019-12-20 09:07:01
  */
 @Data
 public class ShopCar implements Serializable {
-    private static final long serialVersionUID = -59102993180680300L;
+    private static final long serialVersionUID = 953794008961743991L;
     /**
     * 购物车id
     */

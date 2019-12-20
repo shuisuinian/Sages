@@ -7,11 +7,11 @@ import java.io.Serializable;
  * (UserFocus)实体类
  *
  * @author wanyifan
- * @since 2019-12-19 21:09:18
+ * @since 2019-12-20 09:07:01
  */
 @Data
 public class UserFocus implements Serializable {
-    private static final long serialVersionUID = -87728489595673559L;
+    private static final long serialVersionUID = -72281465049026203L;
     /**
     * 用户关注表id
     */

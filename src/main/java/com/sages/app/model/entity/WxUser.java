@@ -8,11 +8,11 @@ import java.io.Serializable;
  * (WxUser)实体类
  *
  * @author wanyifan
- * @since 2019-12-19 21:09:18
+ * @since 2019-12-20 09:07:01
  */
 @Data
 public class WxUser implements Serializable {
-    private static final long serialVersionUID = 251661435063304463L;
+    private static final long serialVersionUID = -75001068071609312L;
     /**
     * 用户id
     */
