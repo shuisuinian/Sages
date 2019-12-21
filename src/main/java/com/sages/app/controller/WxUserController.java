@@ -1,6 +1,9 @@
 package com.sages.app.controller;
 
+import com.sages.app.constant.enums.Status;
+import com.sages.app.exception.JsonException;
 import com.sages.app.model.entity.WxUser;
+import com.sages.app.model.vo.ApiResponse;
 import com.sages.app.service.WxUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +21,12 @@ import java.util.List;
 @RequestMapping("/user")
 public class WxUserController {
 
-    @Autowired
-    private WxUserService wxUserService;
+    private final WxUserService wxUserService;
+
+    public WxUserController(WxUserService wxUserService) {
+        this.wxUserService = wxUserService;
+    }
+
     @GetMapping("/getAllUser")
     public ResponseEntity<List<WxUser>> getAllUser(){
         List<WxUser> wxUsers = wxUserService.listWxUsers();

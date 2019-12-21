@@ -1,4 +1,4 @@
-package com.sages.app.model.enums;
+package com.sages.app.constant.enums;
 
 import lombok.Getter;
 

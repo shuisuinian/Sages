@@ -4,20 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-/**
- * <p>
- * IP 工具类
- * </p>
- *
- * @package: com.xkcoding.websocket.util
- * @description: IP 工具类
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 16:08
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
- */
-public class IpUtil {
+public class IpUtils {
     public static String getIpAddr(HttpServletRequest request) {
         if (request == null) {
             return "unknown";
