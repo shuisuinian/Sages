@@ -4,14 +4,14 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * (ShopCar)实体类
+ * (Cart)实体类
  *
  * @author wanyifan
- * @since 2019-12-20 09:07:01
+ * @since 2019-12-21 15:08:30
  */
 @Data
-public class ShopCar implements Serializable {
-    private static final long serialVersionUID = 953794008961743991L;
+public class Cart implements Serializable {
+    private static final long serialVersionUID = -68584895163731737L;
     /**
     * 购物车id
     */

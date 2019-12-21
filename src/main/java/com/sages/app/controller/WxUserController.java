@@ -18,7 +18,7 @@ import java.util.List;
  * @date 2019/12/20 9:12
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class WxUserController {
 
     private final WxUserService wxUserService;
@@ -28,7 +28,8 @@ public class WxUserController {
     }
 
     @GetMapping("/getAllUser")
-    public ResponseEntity<List<WxUser>> getAllUser(){
+    public ResponseEntity<List<WxUser>> getAllUser(String string){
+        System.out.println(string);
         List<WxUser> wxUsers = wxUserService.listWxUsers();
         return ResponseEntity.ok(wxUsers);
     }
