@@ -39,7 +39,7 @@ public class ConfigProperty {
         ConfigProperty.grantType = grantType;
     }
 
-    public static final String ERRCODE = "errcode";
+    public static final String ERROR_CODE = "errcode";
     public static final String SESSION_KEY = "session_key";
     public static final String OPEN_ID = "openid";
 }

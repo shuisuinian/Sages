@@ -3,6 +3,7 @@ package com.sages.app.service.impl;
 import com.sages.app.mapper.WxUserMapper;
 import com.sages.app.model.entity.WxUser;
 import com.sages.app.service.WxUserService;
+import com.sages.app.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -6,6 +6,8 @@ import com.sages.app.constant.ConfigProperty;
 import com.sages.app.constant.enums.Status;
 import com.sages.app.exception.JsonException;
 import com.sages.app.service.WxLoginProxyService;
+import com.sages.app.util.RedisUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -20,6 +22,13 @@ import java.util.UUID;
  */
 @Service
 public class WxLoginProxyServiceImpl implements WxLoginProxyService {
+
+    private final RedisUtil redisUtil;
+
+    public WxLoginProxyServiceImpl(RedisUtil redisUtil) {
+        this.redisUtil = redisUtil;
+    }
+
     @Override
     public Object wxProxyLogin(String jsCode) {
 
@@ -34,21 +43,34 @@ public class WxLoginProxyServiceImpl implements WxLoginProxyService {
             throw new JsonException(Status.CONNECTION_TIMEOUT);
         }
         JSONObject object = JSONObject.parseObject(ret);
-        if (object.containsKey(ConfigProperty.ERRCODE)) {
-            throw new JsonException(Status.UNKNOWN_ERROR.getCode(),object.get(ConfigProperty.ERRCODE).toString());
+        if (object.containsKey(ConfigProperty.ERROR_CODE)) {
+            throw new JsonException(Status.UNKNOWN_ERROR.getCode(),object.get(ConfigProperty.ERROR_CODE).toString());
         }
         String sessionKey = object.get(ConfigProperty.SESSION_KEY).toString();
         String openId = object.get(ConfigProperty.OPEN_ID).toString();
 
+        //伪造两个缓存
+//        redisUtil.set(openId,"000-000-000-000",5000L);
+//        redisUtil.set("000-000-000-000","ssss{}ssss",5000L);
         // 删除之前的缓存
+        String oldToken = redisUtil.get(openId).toString();
+        System.out.println("old-token:"+oldToken);
+        // 之前的缓存
+        redisUtil.del(openId);
+        System.out.println("是不是删除了old-token呢？ " + redisUtil.get(openId));
+        String oldSessionObj = redisUtil.get(oldToken).toString();
+        System.out.println("sessionobj-old"+oldSessionObj);
+        System.out.println("是不是删除了ooldSessionObj呢？ " + redisUtil.get(oldToken));
+        redisUtil.del(oldToken);
+        // 设置当前缓存
         String token = UUID.randomUUID().toString();
         JSONObject sessionObj = new JSONObject();
         sessionObj.put("openId",openId);
         sessionObj.put("sessionKey",sessionKey);
         //  key-uuid    value-sessionObj  进入缓存
-
+        redisUtil.set(token,sessionObj.toJSONString(),5000L);
         // key-openid   value-uuid;   进入缓存
-
+        redisUtil.set(openId,token,5000L);
         // 把 token 返回给小程序
         return token;
     }
