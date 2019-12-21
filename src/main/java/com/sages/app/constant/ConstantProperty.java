@@ -1,5 +1,6 @@
 package com.sages.app.constant;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -16,4 +17,5 @@ public class ConstantProperty {
     public void setErrorLogStackNumber(Integer errorLogStackNumber) {
         ConstantProperty.errorLogStackNumber = errorLogStackNumber;
     }
+
 }

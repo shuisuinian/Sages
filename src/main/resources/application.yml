@@ -29,6 +29,5 @@ pagehelper:
   reasonable: true
   params: count=countSql
 
-
 constant:
   error-log-stack-number: 3

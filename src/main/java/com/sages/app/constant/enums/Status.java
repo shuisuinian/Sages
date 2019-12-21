@@ -16,7 +16,12 @@ public enum Status {
 	/**
 	 * 未知异常
 	 */
-	UNKNOWN_ERROR(500, "服务器出错啦");
+	UNKNOWN_ERROR(500, "服务器出错啦"),
+	/**
+	 * 请求超时
+	 */
+	CONNECTION_TIMEOUT(408,"请求超时"),
+	;
 	/**
 	 * 状态码
 	 */
