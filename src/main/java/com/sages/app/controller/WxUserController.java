@@ -1,5 +1,6 @@
 package com.sages.app.controller;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.sages.app.model.entity.WxUser;
 import com.sages.app.service.WxLoginProxyService;
 import com.sages.app.service.WxUserService;
@@ -7,6 +8,7 @@ import com.sages.app.util.RedisUtil;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -14,8 +16,9 @@ import java.util.List;
  * @date 2019/12/20 9:12
  */
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api")
 public class WxUserController {
+
 
     private final WxUserService wxUserService;
     private final WxLoginProxyService wxLoginProxyService;
@@ -35,7 +38,8 @@ public class WxUserController {
     @GetMapping("/getAllUser")
     public ResponseEntity<List<WxUser>> getAllUser(String string){
         System.out.println(string);
-        List<WxUser> wxUsers = wxUserService.listWxUsers();
+        List<WxUser> wxUsers = wxUserService.list();
+//        wxUserService.
         return ResponseEntity.ok(wxUsers);
     }
 

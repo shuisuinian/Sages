@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @author wanyifan
  * @date 2019/12/19 14:51
  */
-@ControllerAdvice
+//@ControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
 	private static final String DEFAULT_ERROR_VIEW = "error";

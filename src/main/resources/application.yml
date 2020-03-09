@@ -1,3 +1,9 @@
+server:
+  port: 8081
+#  address: 127.0.0.1
+#  resource: /Users/wanyifan/Documents/attend/
+
+
 spring:
   redis:
     host: 47.98.187.155  # Redis服务器地址
@@ -24,24 +30,18 @@ mybatis:
   configuration:
     # 下划线转驼峰
     map-underscore-to-camel-case: true
-  mapper-locations: classpath:mappers/*.xml
+  mapper-locations: classpath:mapper.app/*.xml
   type-aliases-package: com.sages.app.mapper
-#mapper:
-#  mappers:
-#    - tk.mybatis.mapper.common.Mapper
-#  not-empty: true
-#  style: camelhump
-#  wrap-keyword: "`{0}`"
-#  safe-delete: true
-#  safe-update: true
-#  identity: MYSQL
+
 pagehelper:
-  auto-dialect: true
-  helper-dialect: mysql
-  reasonable: true
+  reasonable: false # 禁用合理化时，如果pageNum<1或pageNum>pages会返回空数据
+  support-methods-arguments: true
   params: count=countSql
+  row-bounds-with-count: true
+  helper-dialect: mysql
 
 
 
 constant:
   error-log-stack-number: 3
+

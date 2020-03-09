@@ -71,6 +71,15 @@ public class ApiResponse {
 	}
 
 	/**
+	 * 构造一个失败且不带数据的API返回
+	 *
+	 * @return ApiResponse
+	 */
+	public static ApiResponse ofFail() {
+		return ofStatus(Status.FAIL);
+	}
+
+	/**
 	 * 构造一个成功且自定义消息的API返回
 	 *
 	 * @param message 返回内容

@@ -1,5 +1,6 @@
 package com.sages.app.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.sages.app.model.entity.WxUser;
 
 import java.util.List;
@@ -8,10 +9,6 @@ import java.util.List;
  * @author wanyifan
  * @date 2019/12/20 9:19
  */
-public interface WxUserService {
-    /**
-     * 获取所有用户信息列表
-     * @return list
-     */
-    List<WxUser> listWxUsers();
+public interface WxUserService extends IService<WxUser> {
+
 }

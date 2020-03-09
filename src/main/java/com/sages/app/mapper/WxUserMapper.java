@@ -1,13 +1,11 @@
 package com.sages.app.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.sages.app.model.entity.WxUser;
-import tk.mybatis.mapper.common.Mapper;
+
 /**
- * (WxUser)表数据库访问层
- *
  * @author wanyifan
- * @since 2019-12-20 09:07:01
+ * @date 2020/3/3
  */
-@org.apache.ibatis.annotations.Mapper
-public interface WxUserMapper extends Mapper<WxUser>{
+public interface WxUserMapper extends BaseMapper<WxUser> {
 }

@@ -1,0 +1,6 @@
+wx:
+  app:
+    id: wxddd0aeea1a46ab50
+    secret: de418ffd1fd094230042bb73c422c8e1
+    url: https://api.weixin.qq.com/sns/jscode2session
+    grant-type: authorization_code
