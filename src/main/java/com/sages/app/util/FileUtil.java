@@ -6,6 +6,10 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -65,9 +69,28 @@ public class FileUtil {
         }
     }
 
-    public static String renameToUUID(String fileName) {
-        return UUID.randomUUID() + "." + fileName.substring(fileName.lastIndexOf(".") + 1);
+    public static String renameToUUID(String suffix) {
+        return UUID.randomUUID().toString()+suffix;
     }
+
+    public static String reFolderNameToDate(){
+        DateFormat df = new SimpleDateFormat("yyyyMMdd");
+        return df.format(new Date())+'/';
+    }
+
+//    /**
+//     * 获取 yyyyMMdd/UUID.suffix 格式的文件
+//     *
+//     * @Title: getDateFolderUidNameAndSuffix
+//     *
+//     * @param suffix: 文件后缀
+//     * @return java.lang.String
+//     * @Author: wanyifan
+//     * @Date: 2020/3/10 8:48 下午
+//     */
+//    public static String getDateFolderUidNameAndSuffix(String suffix){
+//        return reFolderNameToDate() + '/' + renameToUUID() +  suffix;
+//    }
 
     public static void download(HttpServletResponse res, String path, String fileName) {
         downloadLocal(res, path, fileName);

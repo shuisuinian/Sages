@@ -36,6 +36,10 @@ public class MessageVO {
         return new MessageVO(true,"操作成功");
     }
 
+    public static MessageVO successUrl(Object url){
+        return new MessageVO(true,"操作成功",url);
+    }
+
     public static MessageVO success(String message){
         return new MessageVO(true,message);
     }
@@ -46,6 +50,10 @@ public class MessageVO {
 
     public static MessageVO fail(){
         return new MessageVO(false,"操作失败");
+    }
+
+    public static MessageVO fail(String msg){
+        return new MessageVO(false,msg);
     }
 
     public static MessageVO of(Boolean status){

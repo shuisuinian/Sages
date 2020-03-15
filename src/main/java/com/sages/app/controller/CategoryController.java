@@ -36,6 +36,11 @@ public class CategoryController {
         return ApiResponse.ofSuccess(categoryService.treeCategory());
     }
 
+    @GetMapping("/list/category")
+    public ApiResponse listCateGory(){
+        return ApiResponse.ofSuccess(categoryService.list());
+    }
+
     @GetMapping("/category/{id}")
     public ApiResponse getCategory(@PathVariable Integer id){
         Category c = categoryService.getById(id);

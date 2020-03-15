@@ -1,9 +1,9 @@
 package com.sages.app.model.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.sages.app.constant.SystemConstant;
 import com.sages.app.constant.enums.BookSkuTypeEnum;
 import com.sages.app.model.entity.BookSku;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -44,12 +44,15 @@ public class BookSkuVO {
     public BookSkuVO(BookSku sku) {
         this.id = sku.getId();
         this.name = sku.getName();
-        this.coverPic = sku.getCoverPic();
+        this.coverPic = SystemConstant.BOOK_PIC_URL + sku.getCoverPic();
         this.type = sku.getType();
         this.typeName = BookSkuTypeEnum.getName(sku.getType());
         this.version = sku.getVersion();
         this.publishTime = sku.getPublishTime();
         this.repertoryNum = sku.getRepertoryNum();
+        if (repertoryNum.equals(-1)){
+            repertoryNum = 999;
+        }
         this.currentPrice = sku.getCurrentPrice();
         this.originalPrice = sku.getOriginalPrice();
         this.soldNum = sku.getSoldNum();
