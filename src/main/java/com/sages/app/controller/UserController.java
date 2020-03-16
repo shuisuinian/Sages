@@ -15,6 +15,7 @@ import com.sages.app.model.vo.PageTable;
 import com.sages.app.service.IUserService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import javax.xml.crypto.Data;
 import java.util.List;
@@ -69,7 +70,7 @@ public class UserController {
 //    }
 
     @PostMapping("/admin/login")
-    public ApiResponse adminUserLogin(@RequestParam String account,@RequestParam String password){
+    public ApiResponse adminUserLogin(@RequestParam String account, @RequestParam String password, HttpSession session){
         Boolean status = userService.adminUserLogin(account, password);
         return ApiResponse.ofSuccess(MessageVO.of(status));
     }
