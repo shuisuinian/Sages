@@ -34,5 +34,5 @@ public interface IUserService extends IService<User> {
      * @param password 密码
      * @return true/false
      */
-    Boolean adminUserLogin(String account,String password);
+    User adminUserLogin(String account,String password);
 }

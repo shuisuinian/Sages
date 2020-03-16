@@ -40,13 +40,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
-    public Boolean adminUserLogin(String account, String password) {
+    public User adminUserLogin(String account, String password) {
         if (!PasswordUtil.checkPwd(password)) {
-            return false;
+            return null;
         }
         String pwd = PasswordUtil.encryption(password);
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.eq("account",account).eq("password",pwd);
-        return getOne(wrapper)!=null;
+        return getOne(wrapper);
     }
 }

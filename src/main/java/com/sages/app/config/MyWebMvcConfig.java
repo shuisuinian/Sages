@@ -2,6 +2,7 @@ package com.sages.app.config;
 
 import com.sages.app.constant.ConstantProperty;
 import com.sages.app.constant.SystemConstant;
+import com.sages.app.handler.ApiSignatureInterceptor;
 import org.apache.tomcat.util.bcel.Const;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
@@ -44,8 +45,8 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 //        registry.addInterceptor(new ApiSignatureInterceptor())
-//                .addPathPatterns("/**")
-//        ;
+//                .addPathPatterns("/**").excludePathPatterns("/login.html","/css/**",
+//                "/js/**", "/images/**","/fonts/**","/lib/**",SystemConstant.BOOK_PIC+"**",SystemConstant.COMMENT_PIC+"**");
     }
 
     /**
@@ -72,8 +73,8 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
         return factory.createMultipartConfig();
     }
 
-//    @Override
-//    public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/").setViewName("login.html");
-//    }
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("login.html");
+    }
 }

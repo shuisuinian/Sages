@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.page.PageMethod;
+import com.sages.app.constant.SystemConstant;
 import com.sages.app.constant.enums.Status;
 import com.sages.app.constant.enums.UserTypeEnum;
 import com.sages.app.model.entity.User;
@@ -67,12 +68,16 @@ public class UserController {
 //        boolean save = userService.save(user);
 //        System.out.println(user);
 //        return ApiResponse.ofStatus(Status.OK);
-//    }
+//    }il
 
     @PostMapping("/admin/login")
     public ApiResponse adminUserLogin(@RequestParam String account, @RequestParam String password, HttpSession session){
-        Boolean status = userService.adminUserLogin(account, password);
-        return ApiResponse.ofSuccess(MessageVO.of(status));
+        User user = userService.adminUserLogin(account, password);
+        if (user!=null){
+            session.setAttribute(SystemConstant.SESSION_USER_KEY,user);
+        }
+        return ApiResponse.ofSuccess(MessageVO.of(user!=null));
+//        userService.
     }
 }
 
