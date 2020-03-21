@@ -4,8 +4,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.sages.app.model.entity.User;
 import com.sages.app.model.vo.PageTable;
 
-import java.util.List;
-
 /**
  * <p>
  * 服务类
@@ -30,9 +28,17 @@ public interface IUserService extends IService<User> {
     /**
      * 管理员登录接口
      *
-     * @param account 账户
+     * @param account  账户
      * @param password 密码
      * @return true/false
      */
-    User adminUserLogin(String account,String password);
+    User adminUserLogin(String account, String password);
+
+    /**
+     * 保存或者更新user
+     *
+     * @param user
+     * @return
+     */
+    boolean saveOrUpdateUser(User user);
 }

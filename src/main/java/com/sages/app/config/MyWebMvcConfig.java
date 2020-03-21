@@ -3,7 +3,6 @@ package com.sages.app.config;
 import com.sages.app.constant.ConstantProperty;
 import com.sages.app.constant.SystemConstant;
 import com.sages.app.handler.ApiSignatureInterceptor;
-import org.apache.tomcat.util.bcel.Const;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +16,13 @@ import javax.servlet.MultipartConfigElement;
  */
 @Configuration
 public class MyWebMvcConfig implements WebMvcConfigurer {
+
+    private final ApiSignatureInterceptor apiSignatureInterceptor;
+
+    public MyWebMvcConfig(ApiSignatureInterceptor apiSignatureInterceptor) {
+        this.apiSignatureInterceptor = apiSignatureInterceptor;
+    }
+
     /**
      * 配置解决跨域问题
      *
@@ -44,9 +50,9 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-//        registry.addInterceptor(new ApiSignatureInterceptor())
-//                .addPathPatterns("/**").excludePathPatterns("/login.html","/css/**",
-//                "/js/**", "/images/**","/fonts/**","/lib/**",SystemConstant.BOOK_PIC+"**",SystemConstant.COMMENT_PIC+"**");
+        registry.addInterceptor(apiSignatureInterceptor)
+                .addPathPatterns("/**").excludePathPatterns("/login.html","/css/**",
+                "/js/**", "/images/**","/fonts/**","/lib/**",SystemConstant.BOOK_PIC+"**",SystemConstant.COMMENT_PIC+"**");
     }
 
     /**

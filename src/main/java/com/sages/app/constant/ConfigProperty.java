@@ -42,4 +42,5 @@ public class ConfigProperty {
     public static final String ERROR_CODE = "errcode";
     public static final String SESSION_KEY = "session_key";
     public static final String OPEN_ID = "openid";
+    public static final String TOKEN = "token";
 }

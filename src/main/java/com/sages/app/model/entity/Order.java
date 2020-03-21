@@ -39,5 +39,7 @@ public class Order implements Serializable {
 
     private LocalDateTime createTime;
 
+    private String address;
+
 
 }

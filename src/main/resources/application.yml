@@ -1,8 +1,9 @@
 server:
   port: 8081
-#  address: 127.0.0.1
-#  resource: /Users/wanyifan/Documents/attend/
-
+  ip: 127.0.0.1
+  resource: /Users/wanyifan/Documents/sages/
+  address:
+    url: http://${server.ip}:${server.port}
 
 spring:
   redis:
@@ -26,6 +27,8 @@ logging:
   level:
     com.sages.app: debug
     com.sages.app.mapper: trace
+  path: ${server.resource}logs/
+  file: ${logging.path}
 mybatis:
   configuration:
     # 下划线转驼峰
@@ -45,3 +48,7 @@ pagehelper:
 constant:
   error-log-stack-number: 3
 
+picture:
+  path: ${server.resource}picture/
+  book: ${picture.path}book/
+  comment: ${picture.path}comment/

@@ -17,6 +17,10 @@ public enum Status {
 	 */
 	FAIL(404, "没有找到"),
 	/**
+	 * Unauthorized
+	 */
+	UNAUTHORIZED(401,"没有权限"),
+	/**
 	 * 文件转化异常
 	 */
 	TYPE_CASE_ERROR(401,"文件类型转化异常"),

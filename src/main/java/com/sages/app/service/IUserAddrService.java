@@ -1,7 +1,9 @@
 package com.sages.app.service;
 
-import com.sages.app.model.entity.UserAddr;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.sages.app.model.entity.UserAddr;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +15,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserAddrService extends IService<UserAddr> {
 
+    /**
+     * 获取地址信息列表
+     *
+     * @param openId
+     * @return
+     */
+    List<UserAddr> listAddrByOpenId(String openId);
 }
