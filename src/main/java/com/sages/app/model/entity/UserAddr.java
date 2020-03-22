@@ -31,6 +31,10 @@ public class UserAddr implements Serializable {
 
     private Integer userId;
 
+    private String name;
+
+    private String phoneNum;
+
     @ApiModelProperty(value = "邮编")
     private Integer zip;
 
